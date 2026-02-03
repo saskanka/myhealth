@@ -1,0 +1,17 @@
+<!-- Garmin Modal fragment -->
+<div id="garmin-modal" class="modal hidden">
+  <div class="modal-content">
+  <button id="close-modal" class="modal-close" onclick="(window.__hideModal && window.__hideModal())">×</button>
+    <div class="modal-header">Garmin Activities</div>
+    <div id="activities-container" class="activities-container">
+      <div class="activities-toolbar">
+        <button id="auth-start" class="btn-link">Sign in to Garmin</button>
+        <button id="refresh-activities" class="btn-link">Refresh</button>
+        <button id="use-mock" class="btn-link">Use mock data</button>
+        <button id="open-new-tab" class="btn-link">Open activities in new tab</button>
+      </div>
+      <div id="activities-list" class="activities-list">Loading activities...</div>
+      <div class="modal-footer">If you haven't signed in, click "Sign in to Garmin" to authenticate. Activities are fetched via the local proxy.</div>
+    </div>
+  </div>
+</div>

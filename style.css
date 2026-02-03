@@ -1,0 +1,406 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f7f8fa;
+  color: #222;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  background: #26313c;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 32px;
+  position: relative;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin-bottom: 8px;
+}
+.greeting {
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+.username {
+  font-weight: bold;
+  color: #b2e0ff;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav li {
+  padding: 12px 32px;
+  margin: 8px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.nav li.active, .nav li:hover {
+  background: #1e2530;
+}
+
+.nav-btn {
+  background: #ff6b6b;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95em;
+}
+.nav-btn:hover {
+  background: #ff5252;
+}
+.nav-btn.active {
+  box-shadow: 0 0 0 3px rgba(33,150,243,0.14);
+  background: #1976d2;
+}
+
+.calendar {
+  position: absolute;
+  left: 0;
+  bottom: 32px;
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: bold;
+  color: #e74c3c;
+  font-size: 1.2em;
+  z-index: 1;
+}
+.calendar .month {
+  margin-top: 8px;
+  letter-spacing: 2px;
+}
+.calendar .page-curl {
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(135deg, #eee 60%, #fff 100%);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  margin-top: 32px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+}
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+.tasks-remaining, .quote, .sunset {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 18px 28px;
+  min-width: 220px;
+  margin-right: 16px;
+}
+.tasks-remaining .label, .quote .label, .sunset .label {
+  font-size: 0.95em;
+  color: #888;
+  margin-bottom: 6px;
+}
+.tasks-remaining .count {
+  font-size: 2.2em;
+  color: #2196f3;
+  font-weight: bold;
+}
+.tasks-remaining .completed {
+  font-size: 0.9em;
+  color: #4caf50;
+  margin-top: 4px;
+}
+.quote blockquote {
+  margin: 0;
+  font-size: 1em;
+  color: #26313c;
+}
+.quote .author {
+  color: #888;
+  font-size: 0.95em;
+}
+.sunset .time {
+  font-size: 2em;
+  color: #f44336;
+  font-weight: bold;
+}
+.sunset .move {
+  color: #2196f3;
+  font-size: 0.95em;
+  margin-top: 4px;
+}
+
+.dashboard-body {
+  display: flex;
+  gap: 32px;
+}
+.tasks-panel, .productivity-panel {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 24px 28px;
+  flex: 1;
+  min-width: 340px;
+  display: flex;
+  flex-direction: column;
+}
+.tasks-panel {
+  margin-right: 16px;
+}
+.panel-header {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.advice-btn {
+  background: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 12px;
+  cursor: pointer;
+  font-size: 0.95em;
+}
+.tasks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+}
+.tasks-list li {
+  background: #f7f8fa;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1em;
+}
+.tag {
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.85em;
+  color: #fff;
+  margin-left: 8px;
+}
+.saas { background: #4caf50; }
+.trips { background: #2196f3; }
+.meports { background: #00bcd4; }
+.read { background: #ff9800; }
+.frugal { background: #8bc34a; }
+
+.add-task {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.add-task input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+}
+.add-task button {
+  background: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 1em;
+}
+.view-past {
+  color: #2196f3;
+  text-decoration: none;
+  font-size: 0.95em;
+  margin-top: 4px;
+  align-self: flex-end;
+}
+
+.productivity-panel .chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.legend {
+  margin-bottom: 18px;
+}
+.legend div {
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  margin-bottom: 4px;
+}
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+.very-productive { background: #4caf50; }
+.productive { background: #2196f3; }
+.neutral { background: #ffc107; }
+.distracting { background: #f44336; }
+.very-distracting { background: #9c27b0; }
+.legend .time {
+  margin-left: auto;
+  color: #888;
+  font-size: 0.95em;
+}
+.view-usage {
+  background: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 1em;
+  align-self: flex-end;
+}
+
+@media (max-width: 1100px) {
+  .dashboard-body {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .tasks-panel, .productivity-panel {
+    margin-right: 0;
+    min-width: 0;
+  }
+}
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 16px 0;
+    height: auto;
+  }
+  .main-content {
+    padding: 16px 8px;
+  }
+  .dashboard-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+/* Modal for Garmin embed */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal.hidden { display: none; }
+.modal-content {
+  width: 92%;
+  max-width: 1100px;
+  height: 82%;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  right: 14px;
+  top: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.6em;
+  cursor: pointer;
+}
+.modal-header {
+  padding: 12px 18px;
+  border-bottom: 1px solid #eee;
+  font-weight: 600;
+}
+#garmin-iframe {
+  flex: 1;
+  width: 100%;
+  border: 0;
+}
+.modal-footer {
+  padding: 10px 16px;
+  border-top: 1px solid #eee;
+  font-size: 0.95em;
+  color: #666;
+}
+
+.modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+}
+.btn-link {
+  background: #2196f3;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn-link:hover { background: #1976d2; }
+
+.activities-container { display: flex; flex-direction: column; height: 100%; }
+.activities-toolbar { display:flex; gap:8px; padding: 12px 16px; border-bottom: 1px solid #eee; }
+.activities-list { overflow: auto; padding: 12px 16px; flex: 1; }
+.activity-item { display:flex; gap:12px; padding:10px 8px; border-bottom:1px solid #f0f0f0; align-items:center; }
+.activity-icon { font-size: 1.6em; }
+.activity-name { font-weight:600; }
+.activity-sub { color:#666; font-size:0.9em; }
+.not-auth { color:#b71c1c; }
+.no-activities { color:#666; }
