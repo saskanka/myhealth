@@ -545,7 +545,7 @@
 
       if (closeBtn && typeof closeBtn.addEventListener === 'function') closeBtn.addEventListener('click', hideModal);
       if (openNewTabBtn && typeof openNewTabBtn.addEventListener === 'function') openNewTabBtn.addEventListener('click', (e) => { e.preventDefault(); openInNewTab(); });
-      if (authBtn && typeof authBtn.addEventListener === 'function') authBtn.addEventListener('click', (e) => { e.preventDefault(); window.open('/auth/start', '_blank'); });
+      if (authBtn && typeof authBtn.addEventListener === 'function') authBtn.addEventListener('click', (e) => { e.preventDefault(); window.open('https://aforesaid-cade-uneclipsed.ngrok-free.dev/auth/start', '_blank'); });
       if (refreshBtn && typeof refreshBtn.addEventListener === 'function') refreshBtn.addEventListener('click', (e) => { e.preventDefault(); fetchActivities(); });
       if (useMockBtn && typeof useMockBtn.addEventListener === 'function') useMockBtn.addEventListener('click', (e) => { e.preventDefault(); fetchActivities({ mock: true }); });
 
