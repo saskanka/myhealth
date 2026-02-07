@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "frontend": "http-server -p 3001"
+    "frontend": "live-server --port=3001 --watch=."
   },
   "dependencies": {
     "dotenv": "^16.0.0",
@@ -16,6 +16,7 @@
   }
   ,"devDependencies": {
     "nodemon": "^2.0.22",
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.1"
   }
 }
